@@ -32,7 +32,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # Minimum Versions
-set(QT_MINIMUM_VERSION "6.6.0")
+set(QT_MINIMUM_VERSION "6.4.2")
 set(LXQTBT_MINIMUM_VERSION "2.2.0")
 
 find_package(Qt6Widgets "${QT_MINIMUM_VERSION}" REQUIRED)
@@ -282,9 +282,8 @@ configure_file(
 )
 
 configure_file(
-    "${PROJECT_SOURCE_DIR}/lib/qtermwidget_version.h.in"
-    "${CMAKE_BINARY_DIR}/lib/qtermwidget_version.h"
-    @ONLY
+    ${CMAKE_CURRENT_SOURCE_DIR}/lib/qtermwidget_version.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/lib/qtermwidget_version.h
 )
 
 install(FILES
